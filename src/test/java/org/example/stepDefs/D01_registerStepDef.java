@@ -13,6 +13,7 @@ import org.testng.asserts.SoftAssert;
 public class D01_registerStepDef {
     P01_register register = new P01_register();
     SoftAssert softassert = new SoftAssert();
+    public static String registeredemial;
 
     @Given("user go to register page")
     public void goRegisterPage() {
@@ -27,7 +28,7 @@ public class D01_registerStepDef {
 
     @And("^user enter first name \"(.*)\" and last name \"(.*)\"$")
     public void enterFirstAndlastNames(String firstname, String lastname) {
-        register.login("automation", "tester");
+        register.login(firstname, lastname);
     }
 
     @When("user enter date of birth")
@@ -39,14 +40,14 @@ public class D01_registerStepDef {
 
     @And("^user enter email \"(.*)\" field$")
     public void enterEmail(String email) {
-        String randomemail = RandomStringUtils.randomAlphabetic(10);
-        register.enterEmail().sendKeys(randomemail + "@example.com");
+        registeredemial = RandomStringUtils.randomAlphabetic(1);
+        register.enterEmail().sendKeys(registeredemial + email);
     }
 
     @When("^user fills Password fields \"(.*)\" \"(.*)\"$")
     public void enterPassword(String password, String confirmpassword) {
-        register.enterPassword().sendKeys("P@ssw0rd");
-        register.enterConfirmPassword().sendKeys("P@ssw0rd");
+        register.enterPassword().sendKeys(password);
+        register.enterConfirmPassword().sendKeys(confirmpassword);
     }
 
     @And("user clicks on register button")
@@ -61,7 +62,6 @@ public class D01_registerStepDef {
         softassert.assertEquals(sucessregisterationMsg, "Your registration completed");
         String sucessregisterationMsgColor = register.getSuccessfullyMessagetext().getCssValue("color");
         System.out.println(sucessregisterationMsgColor);
-
         softassert.assertEquals(sucessregisterationMsgColor, "rgba(76, 177, 124, 1)");
         softassert.assertAll();
     }
