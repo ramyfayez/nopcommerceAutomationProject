@@ -1,0 +1,4 @@
+# Created at 2022-08-06T17:11:05.558
+Boot Manifest-JAR contains absolute paths in classpath 'G:\Work\Selemuim\Projects\NopcommerceAutomationProject\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
