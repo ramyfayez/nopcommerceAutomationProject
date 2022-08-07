@@ -40,7 +40,7 @@ public class D01_registerStepDef {
 
     @And("^user enter email \"(.*)\" field$")
     public void enterEmail(String email) {
-        registeredemial = RandomStringUtils.randomAlphabetic(1);
+        registeredemial = RandomStringUtils.randomAlphabetic(2);
         register.enterEmail().sendKeys(registeredemial + email);
     }
 

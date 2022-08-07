@@ -3,9 +3,6 @@ package org.example.pages;
 import org.example.stepDefs.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import static org.example.stepDefs.D01_registerStepDef.registeredemial;
-
 public class P02_login {
     public WebElement loginLink() {
         return Hooks.driver.findElement(By.className("ico-login"));
