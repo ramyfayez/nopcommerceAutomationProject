@@ -17,4 +17,30 @@ public class P03_homePage {
 
         return Hooks.driver.findElements(By.className("price"));
     }
+
+    public WebElement getSearchFiledElement() {
+
+        return Hooks.driver.findElement(By.id("small-searchterms"));
+    }
+
+    public WebElement clickSearchBtn() {
+
+        return Hooks.driver.findElement(By.xpath("//*[@id=\"small-search-box-form\"]/button"));
+    }
+
+    public List<WebElement> assertSearchValues() {
+
+        return Hooks.driver.findElements(By.className("product-title"));
+    }
+
+    public WebElement clickOnProductSR() {
+
+        return Hooks.driver.findElement(By.className("product-title"));
+    }
+
+    public WebElement assertSerialProduct() {
+
+        return Hooks.driver.findElement(By.className("sku"));
+    }
+
 }

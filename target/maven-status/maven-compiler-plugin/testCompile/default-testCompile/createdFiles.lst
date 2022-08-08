@@ -1,6 +1,7 @@
 org\example\stepDefs\D03_currenciesStepDef.class
 org\example\testRunner\Runners.class
 org\example\pages\P01_register.class
+org\example\stepDefs\D04_searchStepDef.class
 org\example\stepDefs\Hooks.class
 org\example\pages\P02_login.class
 org\example\pages\P03_homePage.class

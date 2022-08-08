@@ -20,14 +20,10 @@ public class D03_currenciesStepDef {
     @Then("Find all Elements with Euro currency")
     public void getElementEuroCurrency() {
         List<WebElement> eurovalues = currency.getEuroValues();
-        for (WebElement webElement : eurovalues) {
-            System.out.println(webElement.getText());
-            Assert.assertTrue(eurovalues.get(0).getText().contains("€"));
-            Assert.assertTrue(eurovalues.get(1).getText().contains("€"));
-            Assert.assertTrue(eurovalues.get(2).getText().contains("€"));
-            Assert.assertTrue(eurovalues.get(3).getText().contains("€"));
+        for (WebElement eurovalue : eurovalues) {
+            Assert.assertTrue(eurovalue.getText().contains("€"));
+            System.out.println(eurovalue.getText());
         }
-
     }
 
 }
