@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class P03_homePage {
     public static void selectCurrency(String selection, By ElementId) {
@@ -53,4 +54,12 @@ public class P03_homePage {
         return Hooks.driver.findElement(By.className("page-title"));
     }
 
+    public WebElement clickSliderElement() {
+
+        return Hooks.driver.findElement(By.id("nivo-slider"));
+    }
+    public void implicitWait() {
+
+        Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 }
