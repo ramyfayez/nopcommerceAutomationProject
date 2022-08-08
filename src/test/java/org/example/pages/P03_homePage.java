@@ -43,4 +43,14 @@ public class P03_homePage {
         return Hooks.driver.findElement(By.className("sku"));
     }
 
+    public List<WebElement> getMainCategories() {
+
+        return Hooks.driver.findElements(By.xpath("//ul[@class=\"top-menu notmobile\"]/li"));
+    }
+
+    public WebElement getPageTile() {
+
+        return Hooks.driver.findElement(By.className("page-title"));
+    }
+
 }
