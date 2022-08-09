@@ -94,4 +94,29 @@ public class P03_homePage {
         return Hooks.driver.findElement(By.className("rss"));
     }
 
+    public WebElement clickWishlistBtn() {
+
+        return Hooks.driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div/div/div/div[4]/div[2]/div[3]/div/div[2]/div[3]/div[2]/button[3]"));
+    }
+
+    public WebElement getWishlistProduct() {
+
+        return Hooks.driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div/div/div/div[4]/div[2]/div[3]/div/div[2]/h2/a"));
+    }
+
+    public WebElement getBarNotification() {
+
+        return Hooks.driver.findElement(By.xpath("//*[@id=\"bar-notification\"]/div"));
+    }
+
+    public WebElement clickWishListLink() {
+
+        return Hooks.driver.findElement(By.className("wishlist-label"));
+    }
+
+    public WebElement getQtyValue() {
+
+        return Hooks.driver.findElement(By.className("qty-input"));
+    }
+
 }
