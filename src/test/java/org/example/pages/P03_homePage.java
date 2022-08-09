@@ -3,8 +3,11 @@ package org.example.pages;
 import org.example.stepDefs.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -58,8 +61,37 @@ public class P03_homePage {
 
         return Hooks.driver.findElement(By.id("nivo-slider"));
     }
+
     public void implicitWait() {
 
-        Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Hooks.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+
     }
+
+    public void implicitWaitUntill(String elementpath, String elementattribute, String attributevalue) {
+        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.attributeToBe(By.xpath(elementpath), elementattribute, attributevalue));
+    }
+
+    public WebElement clickFacebookLink() {
+
+        return Hooks.driver.findElement(By.className("facebook"));
+    }
+
+    public WebElement clickTwitterLink() {
+
+        return Hooks.driver.findElement(By.className("twitter"));
+    }
+
+    public WebElement clickYoutubeLink() {
+
+        return Hooks.driver.findElement(By.className("youtube"));
+    }
+
+    public WebElement clickRssLink() {
+
+        return Hooks.driver.findElement(By.className("rss"));
+    }
+
 }
