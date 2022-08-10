@@ -39,7 +39,7 @@ public class D04_searchStepDef {
                 System.out.println(element.getText());
             }
 
-        } else if (Objects.equals(searchword, "SCI_FAITH") || Objects.equals(searchword, "APPLE_CAM") || Objects.equals(searchword, "SF_PRO_11")) {
+        } else if (Objects.equals(searchword, "SCI_FAITH") || Objects.equals(searchword, "APPLE_CAM") || Objects.equals(searchword, "SF_PRO_11") || Objects.equals(searchword, "AP_MBP_13")) {
             Assert.assertTrue(search.assertSerialProduct().getText().contains(searchword));
             System.out.println(search.assertSerialProduct().getText());
         }

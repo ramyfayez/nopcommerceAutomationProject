@@ -20,4 +20,5 @@ Feature: F04_Search | users could use search functionality to get product succes
       | SCI_FAITH |
       | APPLE_CAM |
       | SF_PRO_11 |
+      | AP_MBP_13 |
 
