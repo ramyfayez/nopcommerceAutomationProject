@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,20 +29,13 @@ public class D04_searchStepDef {
         softassert.assertAll();
     }
 
-    @Then("^user find each result contains the search word \"([^\"]*)\"$")
+    @Then("^user find each result contains the search word by keyword \"([^\"]*)\"$")
     public void validateSearchResultValues(String searchword) {
-        if (Objects.equals(searchword, "book") || Objects.equals(searchword, "laptop") || Objects.equals(searchword, "nike")) {
-
-            List<WebElement> searchkeyword = search.assertSearchValues();
-            for (WebElement element : searchkeyword) {
-                softassert.assertTrue(element.getText().toLowerCase().contains(searchword));
-                softassert.assertAll();
-                System.out.println(element.getText());
-            }
-
-        } else if (Objects.equals(searchword, "SCI_FAITH") || Objects.equals(searchword, "APPLE_CAM") || Objects.equals(searchword, "SF_PRO_11") || Objects.equals(searchword, "AP_MBP_13")) {
-            Assert.assertTrue(search.assertSerialProduct().getText().contains(searchword));
-            System.out.println(search.assertSerialProduct().getText());
+        List<WebElement> searchkeyword = search.assertSearchValues();
+        for (WebElement element : searchkeyword) {
+            softassert.assertTrue(element.getText().toLowerCase().contains(searchword));
+            softassert.assertAll();
+            System.out.println(element.getText());
         }
     }
 
@@ -50,4 +44,17 @@ public class D04_searchStepDef {
         search.clickOnProductSR().click();
     }
 
+    @Then("^user find each result contains the search word by sku \"([^\"]*)\"$")
+    public void validateSearchResultValuesWithSku(String skuword) {
+        System.out.println("Serial Full value: " + search.assertSerialProduct().getText());
+        String Skuvalue = search.assertSerialProduct().getText();
+        String[] Skuvalueplited = Skuvalue.split(": ");
+        System.out.println("Sku Value: " + Skuvalueplited[1].trim());
+        Assert.assertTrue(search.assertSerialProduct().getText().contains(skuword));
+        Assert.assertEquals(Skuvalueplited[1].trim(), skuword);
+
+    }
+
 }
+
+
